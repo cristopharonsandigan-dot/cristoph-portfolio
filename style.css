@@ -1,0 +1,66 @@
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body { margin: 0; color: #080808; font-family: Arial, Helvetica, sans-serif; }
+.hero {
+  min-height: 455px; height: 25vw; max-height: 790px; position: relative;
+  background: #f7f7f7 url("assets/gears-home.jpg") right center / auto 100% no-repeat;
+  overflow: hidden; border-bottom: 10px solid #fff;
+}
+.site-logo { position: absolute; top: 10.5%; left: 3.7%; width: clamp(90px, 16.2vw, 235px); height: auto; object-fit: contain; }
+.navigation { position: absolute; top: 5.5%; right: 5.2%; display: flex; gap: clamp(12px, 2.2vw, 34px); z-index: 2; }
+.navigation a { color: #111; background: rgba(220,220,220,.88); padding: 4px 7px; text-decoration: none; font-size: clamp(12px, 1.7vw, 20px); transition: background .2s; }
+.navigation a:hover, .navigation a:focus { background: #bbb; }
+.hero h1 { position: absolute; top: 25%; left: 50%; transform: translateX(-50%); margin: 0; text-align: center; font-family: Georgia, "Times New Roman", serif; font-size: clamp(44px, 6.8vw, 96px); line-height: .98; font-weight: 500; }
+.hero h1 span { white-space: nowrap; }
+.section-bg { border-bottom: 10px solid white; }
+.about { min-height: 455px; display: flex; align-items: center; background: #fafafa; position: relative; }
+.about::before { content: ""; position: absolute; inset: 0 0 0 35%; background: url("assets/gears-home.jpg") center / cover no-repeat; opacity: .12; pointer-events: none; }
+.about-inner { width: 100%; max-width: 1440px; margin: 0 auto; padding: 6.5% 8%; display: grid; grid-template-columns: minmax(180px, 31%) 1fr; gap: 4%; align-items: center; position: relative; }
+.profile-photo { width: 100%; max-width: 375px; display: block; }
+.intro { margin: 0; font-size: clamp(15px, 2.2vw, 25px); line-height: 1.28; text-align: justify; }
+.skills { min-height: 470px; padding: 4.2% 6%; position: relative; background: #f7f7f7 url("assets/gears-contact.jpg") left center / cover no-repeat; }
+.skills::before { content: ""; position: absolute; inset: 0; background: rgba(255,255,255,.68); }
+.skills-grid { max-width: 1320px; margin: auto; display: grid; grid-template-columns: 1fr 1fr; column-gap: 6%; row-gap: 38px; position: relative; }
+.skill-item { display: grid; grid-template-columns: minmax(105px, 42%) 1fr; align-items: center; gap: 6%; min-width: 0; }
+.skill-item img { width: 100%; aspect-ratio: 1; object-fit: contain; background: rgba(255,255,255,.88); }
+.skill-item h2 { margin: 0 0 22px; font-size: clamp(18px, 2.5vw, 29px); font-weight: 400; }
+.skill-item p { margin: 0; font-size: clamp(13px, 1.55vw, 19px); line-height: 1.22; text-align: justify; transition: opacity .25s ease; }
+.carousel-controls { position: absolute; right: 1.5%; top: 50%; transform: translateY(-50%); display: flex; flex-direction: column; align-items: center; gap: 8px; z-index: 2; color: #555; font-size: 12px; }
+.carousel-arrow { border: 1px solid #aaa; border-radius: 50%; background: rgba(255,255,255,.8); width: 30px; height: 30px; cursor: pointer; color: #444; }
+.carousel-arrow:hover { background: #ddd; }
+.contact { min-height: 470px; padding: 2.2% 5% 5%; background: #f7f7f7 url("assets/gears-contact.jpg") left center / cover no-repeat; }
+.contact h2 { text-align: center; font-size: clamp(30px, 4.4vw, 48px); margin: 0 0 5%; }
+.contact-content { max-width: 900px; margin: auto; display: grid; grid-template-columns: 1fr 1.35fr; gap: 8%; align-items: center; }
+.message-prompt { font-size: clamp(16px, 2vw, 22px); line-height: 1.4; text-align: center; }
+.contact-list { display: flex; flex-direction: column; gap: 18px; }
+.contact-link { display: flex; align-items: center; gap: 18px; color: #111; text-decoration: none; font-size: clamp(13px, 1.55vw, 18px); overflow-wrap: anywhere; }
+.contact-link:hover span:last-child { text-decoration: underline; }
+.contact-icon { width: 42px; height: 42px; flex: 0 0 42px; display: grid; place-items: center; color: white; font-weight: bold; font-size: 27px; }
+.phone { background: #08a34a; }
+.facebook { background: #0866ff; font-family: Arial, sans-serif; font-size: 38px; align-items: end; }
+.gmail { color: #e34235; background: white; font-size: 28px; text-shadow: 2px 2px #4285f4; }
+@media (min-width: 1200px) {
+  .hero { min-height: 780px; }
+  .about { min-height: 780px; }
+  .skills { min-height: 780px; display: flex; align-items: center; }
+  .contact { min-height: 780px; }
+}
+@media (max-width: 700px) {
+  .hero { min-height: 340px; height: 62vh; max-height: 500px; background-size: auto 82%; background-position: right bottom; }
+  .site-logo { top: 12%; left: 5%; width: 105px; }
+  .navigation { top: 5%; right: 4%; gap: 6px; }
+  .navigation a { padding: 4px 5px; font-size: 11px; }
+  .hero h1 { top: 42%; font-size: clamp(40px, 10vw, 62px); }
+  .about-inner { grid-template-columns: 1fr; justify-items: center; padding: 40px 8%; gap: 25px; }
+  .profile-photo { width: 58%; max-width: 230px; }
+  .intro { font-size: 16px; text-align: left; }
+  .skills { padding: 35px 8% 55px; }
+  .skills-grid { grid-template-columns: 1fr; row-gap: 25px; }
+  .skill-item { grid-template-columns: 34% 1fr; gap: 5%; }
+  .skill-item h2 { margin-bottom: 8px; }
+  .skill-item p { font-size: 14px; }
+  .carousel-controls { right: 8px; top: auto; bottom: 8px; transform: none; flex-direction: row; }
+  .contact { padding: 30px 8% 55px; }
+  .contact-content { grid-template-columns: 1fr; gap: 18px; }
+  .message-prompt { margin: 0 0 8px; }
+}
